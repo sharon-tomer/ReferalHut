@@ -1,7 +1,7 @@
 {
-  "name": "react-chrome-extension-boilerplate",
-  "version": "0.9.0",
-  "description": "Boilerplate for Chrome extension React.js project",
+  "name": "referal-hut",
+  "version": "0.0.1",
+  "description": "tbd",
   "scripts": {
     "dev": "node scripts/dev",
     "build": "node scripts/build",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhen0409/react-chrome-extension-boilerplate.git"
+    "url": "https://github.com/sharon-tomer/ReferalHut.git"
   },
   "keywords": ["chrome", "extension", "react", "redux", "hot reload", "webpack", "boilerplate"],
   "author": "Jhen <developer@jhen.me>",

@@ -1,34 +1,40 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import MainSection from '../components/MainSection';
-import * as TodoActions from '../actions/todos';
+import * as appActions from '../actions/actions';
 import style from './App.css';
+import messageHandler from '../utils/handleMessage';
 
-@connect(
-  state => ({
-    todos: state.todos
-  }),
-  dispatch => ({
-    actions: bindActionCreators(TodoActions, dispatch)
-  })
-)
 export default class App extends Component {
 
   static propTypes = {
-    todos: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
   };
 
+  constructor() {
+    super();
+    chrome.runtime.onMessage.addListener(messageHandler);
+  }
+
   render() {
-    const { todos, actions } = this.props;
+    const { actions } = this.props;
 
     return (
       <div className={style.normal}>
-        <Header addTodo={actions.addTodo} />
-        <MainSection todos={todos} actions={actions} />
+        <MainSection actions={actions} />
       </div>
     );
   }
 }
+
+connect(
+  App,
+  state => ({
+    prompts: state.prompts
+  }),
+  dispatch => ({
+    actions: bindActionCreators(appActions, dispatch)
+  })
+);

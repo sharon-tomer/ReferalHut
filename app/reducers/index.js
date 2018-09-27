@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
+import prompts from './prompts';
 
 export default combineReducers({
-  todos
+  prompts
 });

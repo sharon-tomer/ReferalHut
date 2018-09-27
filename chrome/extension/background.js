@@ -22,12 +22,12 @@ promisifyAll(chrome, [
   'tabs',
   'windows',
   'browserAction',
-  'contextMenus'
+  // 'contextMenus'
 ]);
 promisifyAll(chrome.storage, [
-  'local',
+  'sync',
 ]);
 
-require('./background/contextMenus');
+// require('./background/contextMenus');
 require('./background/inject');
 require('./background/badge');
